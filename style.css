@@ -1,135 +1,79 @@
 body {
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(27, 26, 26);
+    color: white;
     margin: 0;
-    color: rgb(105, 105, 158);
-    background-color: rgb(248, 246, 243);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+body h1 {
     text-align: center;
-    font-weight: 900;
-}
-
-body h2 {
-    text-shadow: 2px 2px rgb(0, 0, 0);
-}
-
-header {
-    margin: 0;
+    font-size: 50px;
+    margin-top: auto;
     margin-bottom: 30px;
-    padding: 10px;
-    font-weight: 900;
-    font-size: 2.2rem;
-    background-color: rgb(165, 157, 157);
+    background-color:rgb(95, 175, 149);
+    text-shadow: 2px 2px black;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.container {
-    background-color: black;
-    background-color: rgb(165, 157, 157);
-    text-align: left;
-    width: 80%;
-    min-height: 1000px;
-    margin: auto;
-    padding: 30px 40px 30px 40px;
-    border-radius: 6px;
-    border-width: 30px 4px 10px 1px;
-    border-color: rgb(105, 105, 158);
-    border-style: solid;
-    box-shadow: 0px 10px 16px 1px black;
-}
-
-.titulo-fechado {
-    display: block;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 12000px;
+    margin: 0 auto;
+    justify-content: center;
+    margin-left: 120px;
 }
 
 .card {
-   transition: 
-   background-color 1s ease,
-   color 1.5s ease,
-   font-size 0.7s ease,
-   height 0.4s ease,
-   width 0.2s ease,
-   padding 1s ease,
-   margin-left 1s ease,
-   opacity 3.5s ease,
-   border-radius 0.7s ease;
-}
-
-.card-filme {
-    color: rgb(240, 236, 236);
-    align-items: center;
-    min-height: 30px;
-    width: 50%;
-    height: 2em;
-    margin: auto;
-    margin-bottom: 10px;
-    padding-top: 15px;
-    padding-left: 30px;
-    border: 5px solid aliceblue;
-    border-radius: 2.2em;
-    font-weight: 600;
-    font-size: 1.2rem;
-    background-color: rgb(105, 105, 158);
-    box-shadow: 0 5px 5px 1px black;
-}
-
-.card-filme-select {
+    background-color: rgb(48, 46, 44);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
     height: 400px;
-    width: 95%;
-    color: black;
-    display: block;
-    margin: auto;
-    margin-bottom: 10px;
-    padding: 20px;
-    border: 5px solid darkgray;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 2rem;
-    background-color: gainsboro;
-    box-shadow: 0 2px 2px 1px rgb(79, 79, 184);
-}
-
-.card-filme:hover {
-    border: 5px solid black;
-    color: black;
-}
-
-.conteudo {
-    color: rgb(24, 24, 24);
-    font-size: 1.2rem;
-    transition: opacity 1.5s ease;
-}
-
-.escondido {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.visivel {
-    opacity: 1;
-    visibility: visible;
-}
-
-.parte-fig-text {
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
     display: flex;
-    align-items: center;
-    margin-top: 20px;
+    flex-direction: column;
 }
 
-.container-fig {
-    width: 1000px;
-}
-
-.container-fig img {
-    width: auto;
-    max-width: 500px;
-    height: 300px;
-    margin: auto;
-    display: block;
-}
-
-.container-info {
-    height: 100%;
-    margin-left: 20px;
+.card img {
     width: 100%;
-    align-items: center;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card .info {
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.card .info h2 {
+    font-size: 22px;
+    margin: 0;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card .descricao {
+    font-size: 1.3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
     text-align: justify;
+}
+
+.card.selecionado {
+    width: 100%;
+    max-width: 600px;
+    height: auto; 
+}
+
+.card.selecionado .descricao {
+    max-height: 500px; 
 }
